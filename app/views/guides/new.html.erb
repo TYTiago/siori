@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>siori</title>
+    <link rel="stylesheet" href="new.css">
+  </head>
+  <body>
+  <header>
+  <ul>
+  <li>ログイン画面</li>
+  </ul>
+  </header>
+  <%# <%= form_with(model: @guide, local: true) do |f| %>   %>
+  <%# <%= render 'shared/error_messages', model: f.object %> %>
+    <div class="contact">
+      <div class="new-items">
+      <div class="weight-bold-text">
+        タイトル
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :title, class: "hogehoge" %>
+    </div>
+  </body>
+</html>
