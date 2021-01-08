@@ -5,8 +5,9 @@
       <ul>
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
+          <%= link_to current_user.nickname, "#", class: "user-nickname" %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            <a class="post" href="/guides/new">投稿する</a>
+            <a class="post" href="/plans/new">投稿する</a>
           </div>
 
         <% else %>

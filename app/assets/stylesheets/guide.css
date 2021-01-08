@@ -1,11 +1,11 @@
-.plan-top{
+ .plan-top{
   text-align: center;
 }
 
 .main{
   width: 100%;
   display: flex;
-  border-bottom: 1px solid black;
+  border-bottom: px solid black;
 }
 .left-content{
   width: calc(100% - 50%);
@@ -41,9 +41,20 @@
 .top-header{
   background-color: aqua;
   top: 0;
+  height: 10vh;
   width: 100%;
   display: flex;
   align-items: center;
+}
+
+.grid-6{
+  background-color: aqua;
+  top: 0;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 1000px;
 }
 
 h1 {
@@ -56,6 +67,5 @@ ul {
  display: flex;
 }
 
-.grid-6{
- margin: 0 0 0 1000px;
-}
+
+

@@ -64,7 +64,6 @@ URL	デプロイ済みのURLを記述しましょう。デプロイが済んで�
 | time_id        | integer | null: false                    |
 | place          | integer | null: false                    |
 | list           | text    |                                |
-| shop           | integer |                                |
 | calendar       | integer | null: false                    |
 ### Association
 - belongs_to :user

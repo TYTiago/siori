@@ -1,0 +1,43 @@
+<%= render "users/user_login" %> 
+<body>
+ <%= form_with(model: @plan, local: true) do |form| %>
+ <h2>投稿</h2>
+  <div calss="title">
+   <div class="plan-top">
+      <div class="plan-title">
+        <%= form.text_field :title, placeholder: "タイトル"%>
+      </div>
+        <div class="plan-date">
+         <%= form.datetime_select :start_time %>
+        </div>
+    </div> 
+  </div>
+  
+  <div class='main'>
+        <div class="left-content">
+            <div class="left-plan">
+              <div class="plan-time">
+                  <%= form.time_field :time_id, placeholder: "時間" %>
+              </div>  
+              <div class="place">
+                <%= form.text_field :place, placeholder: "場所" %>
+              </div>
+              <div class="do-list">
+                <details>
+                   <summary><%= form.text_area :list, placeholder: "予定", rows: "10" %></summary>
+                     <li><%= form.text_area :list, placeholder: "予定", rows: "10" %></li>
+                     <li><%= form.text_area :list, placeholder: "予定", rows: "10" %></li>
+                     <li><%= form.text_area :list, placeholder: "予定", rows: "10" %></li>
+                </details>
+              </div>
+          </div>
+      </div>
+
+
+   <div class="right-content">
+     <%= form.file_field :image, id:"plan-image" %> 
+    </div>
+     <%= form.submit "SEND" %>
+     </div>
+     <% end %>
+     </body>

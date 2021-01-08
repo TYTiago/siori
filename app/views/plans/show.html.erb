@@ -1,42 +1,36 @@
 <%= render "users/user_login" %> 
-<body>
-
   <div calss="title">
    <div class="plan-top">
       <div class="plan-title">
-        友達とキャンプ
+        <%= @plan.title %>
       </div>
         <div class="plan-date">
-          2021/1/1
+         <%= @plan.start_time %>
         </div>
     </div> 
   </div>
   <div class='main'>
-
-   
-
         <div class="left-content">
             <div class="left-plan">
               <div class="plan-time">
-                07:10
+                  <%= @plan.time_id %>
               </div>  
               <div class="place">
-                平和島公園
+                <%= @plan.place %>
               </div>
               <div class="do-list">
                 <details>
-                   <summary>やりたいことリスト</summary>
-                     <li>折りたたむ内容</li>
-                     <li>折りたたむ内容</li>
-                     <li>折りたたむ内容</li>
+                   <summary><%= @plan.list %></summary>
                 </details>
               </div>
           </div>
       </div>
 
-      
-
-    <div class="right-content">
-    </div>
-  </div>
-</body>
+      <ul>
+      <li>
+      <%= link_to "編集", edit_plan_path(@plan.id), method: :get %>
+      </li>
+      <li>
+       <%= link_to '削除', plan_path(@plan.id), method: :delete %>
+      </li>
+      </ul>
