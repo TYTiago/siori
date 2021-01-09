@@ -1,13 +1,15 @@
-<%= render "users/user_login" %> 
+<%= render "users/user_new" %> 
 <body>
  <%= form_with(model: @plan, local: true) do |form| %>
- <h2>投稿</h2>
-  <div calss="title">
+ <div class ="plan-main">
+  <div class="title">
    <div class="plan-top">
       <div class="plan-title">
-        <%= form.text_field :title, placeholder: "タイトル"%>
+      <p>タイトル</p>
+        <%= form.text_field :title%>
       </div>
         <div class="plan-date">
+        <p>日付</p>
          <%= form.datetime_select :start_time %>
         </div>
     </div> 
@@ -16,28 +18,24 @@
   <div class='main'>
         <div class="left-content">
             <div class="left-plan">
-              <div class="plan-time">
-                  <%= form.time_field :time_id, placeholder: "時間" %>
-              </div>  
               <div class="place">
-                <%= form.text_field :place, placeholder: "場所" %>
+               <p>場所</p>
+                <%= form.text_field :place %>
               </div>
               <div class="do-list">
-                <details>
-                   <summary><%= form.text_area :list, placeholder: "予定", rows: "10" %></summary>
-                     <li><%= form.text_area :list, placeholder: "予定", rows: "10" %></li>
-                     <li><%= form.text_area :list, placeholder: "予定", rows: "10" %></li>
-                     <li><%= form.text_area :list, placeholder: "予定", rows: "10" %></li>
-                </details>
+                </p>内容</p>
+                     <%= form.text_area :list, rows: "10" %>
               </div>
           </div>
       </div>
 
 
    <div class="right-content">
+   <p>写真</p>
      <%= form.file_field :image, id:"plan-image" %> 
     </div>
-     <%= form.submit "SEND" %>
+     <%= form.submit "投稿" %>
      </div>
      <% end %>
+     </div>
      </body>

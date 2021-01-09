@@ -1,36 +1,64 @@
 <%= render "users/user_login" %> 
-  <div calss="title">
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+<body>
+ <%= form_with(model: @plan, local: true) do |form| %>
+ <div class="plan-main">
    <div class="plan-top">
       <div class="plan-title">
         <%= @plan.title %>
       </div>
-        <div class="plan-date">
-         <%= @plan.start_time %>
-        </div>
-    </div> 
-  </div>
-  <div class='main'>
-        <div class="left-content">
-            <div class="left-plan">
-              <div class="plan-time">
-                  <%= @plan.time_id %>
-              </div>  
-              <div class="place">
-                <%= @plan.place %>
-              </div>
-              <div class="do-list">
-                <details>
-                   <summary><%= @plan.list %></summary>
-                </details>
-              </div>
-          </div>
+      <div class="plan-date">
+         <%= @plan.start_time.strftime("%Y-%m-%d %H:%M") %>
       </div>
-
-      <ul>
-      <li>
-      <%= link_to "編集", edit_plan_path(@plan.id), method: :get %>
-      </li>
-      <li>
-       <%= link_to '削除', plan_path(@plan.id), method: :delete %>
-      </li>
-      </ul>
+   </div> 
+  <div class="left-content">
+      <div class="left-plan">
+        <div class="place">
+          <%= @plan.place %>
+        </div>
+        <div class="do-list">
+            <%= @plan.list %>
+        </div>
+      </div>
+     <%= image_tag @plan.image ,class:"plan-box-img" %>
+ <% end %>
+  <div class="plan-change">
+    <ul>
+        <li>
+          <%= link_to "編集", edit_plan_path(@plan.id), method: :get %>
+        </li>
+        <li>
+          <%= link_to '削除', plan_path(@plan.id), method: :delete %>
+        </li>
+    </ul>
+  </div>
+</div>
+<div class="share">
+<%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' %>
+<%= link_to 'LINE', "https://line.me/R/msg/text/?<text>url=#{request.url}", title: 'Twitter', target: '_blank' %>
+<%= link_to 'Facebook', "https://www.facebook.com/share.php?uurl=#{request.url}", title: 'Twitter', target: '_blank' %>
+</div>
+ <div class="container">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@plan, @comment], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+          <%= comment.text %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</body>
+</html>

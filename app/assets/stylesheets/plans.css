@@ -1,0 +1,68 @@
+ 
+
+body{
+  text-align: center;
+}
+.plan-main{
+  border: 1px solid black;
+  height: 90vh; 
+  background-color: cadetblue;
+}
+
+
+.plan-box-img {
+  height: 50vh;
+  width: 60vw;
+  min-height: 500px;
+  background-color: rgb(205, 202, 202);
+  object-fit: contain;
+}
+
+/* header */
+.top-header{
+  background-color: aqua;
+  top: 0;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.grid-6{
+  background-color: aqua;
+  top: 0;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 1000px;
+}
+
+h1 {
+  margin: 0; padding: 0;
+  font-size: 20px;
+}
+
+ul {
+  margin: 0;
+}
+
+
+/* destroy */
+ .contents{
+  width: 100vw;
+  height: 100vh;
+  background-color: cadetblue;
+  position: relative；
+}
+
+.success{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+} 
+
+/* user */

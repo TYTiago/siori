@@ -17,7 +17,9 @@ class PlansController < ApplicationController
   end
 
   def show
-      @plan = Plan.find(params[:id])
+    @plan = Plan.find(params[:id])
+    @comment = Comment.new
+    @comments = @plan.comments.includes(:user)
   end
 
 
@@ -34,6 +36,12 @@ class PlansController < ApplicationController
     plan = Plan.find(params[:id])
     plan.destroy
   end
+  
+  def search
+    redirect_to root_path if params[:keyword] == ""
+    @plans = Plan.search(params[:keyword])
+  end
+
 
 end
 private
