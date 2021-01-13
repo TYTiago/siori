@@ -61,7 +61,6 @@ URL	デプロイ済みのURLを記述しましょう。デプロイが済んで�
 | ------         | ------  | -----------                    |
 | title          | string  | null: false                    |
 | user_id        | integer | null: false, foreign_key: true |
-| time_id        | integer | null: false                    |
 | place          | integer | null: false                    |
 | list           | text    |                                |
 | calendar       | integer | null: false                    |

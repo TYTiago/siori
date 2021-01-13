@@ -1,12 +1,42 @@
- 
-
 body{
   text-align: center;
+  
 }
 .plan-main{
-  border: 1px solid black;
   height: 90vh; 
-  background-color: cadetblue;
+  background-color: rgb(232, 251, 252);
+}
+
+
+
+.share{
+  position: relative;
+  top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.plan-content{
+  float: right;
+}
+.plan-table{
+  position: relative;
+  right: 120px;
+}
+.plan-change{
+  float: left;
+}
+
+footer{
+  text-align:center;
+  background-color: rgb(232, 251, 252);
+  height: 10vh;
+}
+
+.plan-footer{
+  position: relative;
+  top: 20px;
+  
 }
 
 
@@ -18,33 +48,39 @@ body{
   object-fit: contain;
 }
 
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table tr{
+  border-bottom: solid 1px black;
+  border: solid 1px black;
+}
+
+table th{
+  border-right: 1px solid black;
+}
+
 /* header */
-.top-header{
-  background-color: aqua;
-  top: 0;
-  height: 10vh;
-  width: 100%;
+header {
   display: flex;
+  width: 100%;
+  height: 70px;
+  background-color: rgb(105, 247, 247);
   align-items: center;
 }
-
-.grid-6{
-  background-color: aqua;
-  top: 0;
-  height: 10vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin: 0 0 0 1000px;
+ 
+.title {
+  margin-right: auto;
+  color: black;
+  text-decoration:none;
 }
-
-h1 {
-  margin: 0; padding: 0;
-  font-size: 20px;
-}
-
-ul {
-  margin: 0;
+ 
+.menu-item {
+  list-style: none;
+  display: inline-block;
+  padding: 10px;
 }
 
 
@@ -65,4 +101,55 @@ ul {
   transform: translate(-50%, -50%)
 } 
 
+
+
+
 /* user */
+
+
+
+.user-new {
+  height: 200px;
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -100px;
+  margin-left: -150px;
+  background-repeat: no-repeat;
+  text-align: center;
+  }
+
+
+
+
+/* コメント */
+.twitter{
+display: inline-block;
+  border-radius: 5px;
+  background-color: blue;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  width: 80px;
+}
+
+.line{
+  display: inline-block;
+  border-radius: 5px;
+  background-color: chartreuse;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  width: 80px;
+}
+
+.facebook{
+display: inline-block;
+  border-radius: 5px;
+  background-color: darkblue;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  width: 100px;
+}

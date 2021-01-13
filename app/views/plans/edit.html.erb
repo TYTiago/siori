@@ -1,13 +1,17 @@
-<%= render "users/user_login" %> 
+<%= render "users/user_new" %> 
 <body>
- <%= form_with(model: @plan, local: true) do |form| %>
-  <div calss="title">
+ <%= form_with(model: @plan, local: true) do |f| %>
+ <%= render 'devise/shared/error_messages', model: f.object %> 
+ <div class ="plan-main">
+  <div class="title">
    <div class="plan-top">
       <div class="plan-title">
-        <%= form.text_field :title, placeholder: "タイトル"%>
+      <p>タイトル</p>
+        <%= f.text_field :title%>
       </div>
         <div class="plan-date">
-         <%= form.datetime_select :start_time %>
+        <p>日付：時間</p>
+         <%= f.datetime_select :start_time %>
         </div>
     </div> 
   </div>
@@ -16,19 +20,23 @@
         <div class="left-content">
             <div class="left-plan">
               <div class="place">
-                <%= form.text_field :place, placeholder: "場所" %>
+               <p>場所</p>
+                <%= f.text_field :place %>
               </div>
               <div class="do-list">
-                     <%= form.text_area :list, placeholder: "予定", rows: "10" %>
+                </p>内容</p>
+                     <%= f.text_area :list, rows: "10" %>
               </div>
           </div>
       </div>
 
 
    <div class="right-content">
-     <%= form.file_field :image, id:"plan-image" %> 
+   <p>写真</p>
+     <%= f.file_field :image, id:"plan-image" %> 
     </div>
-     <%= form.submit "SEND" %>
+     <%= f.submit "投稿" %>
      </div>
      <% end %>
+     </div>
      </body>

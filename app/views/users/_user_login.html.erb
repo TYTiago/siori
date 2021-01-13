@@ -1,12 +1,13 @@
-      <header class="top-header">
-      <h1>
-        <a href="/">Siori</a>
-      </h1>
-      <ul>
-        <% if user_signed_in? %>
+      <html lang="ja">
+      <body>
+  <header>
+    <h1 class="title"> <a href="/">Siori</a></h1>
+    <nav class="nav">
+      <ul class="menu-group">
+      <% if user_signed_in? %>
           <div class="user_nav grid-6">
-          <%= link_to current_user.nickname, "#", class: "user-nickname" %>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <%= link_to current_user.nickname, "#", class: "user-nickname"%>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'post' %>
             <a class="post" href="/plans/new">投稿する</a>
           </div>
 
@@ -15,7 +16,9 @@
             <%= link_to "ログイン", new_user_session_path, class: 'post' %>
             <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
           </div>
-        
         <% end %>
-        </ul>
-      </header>
+      </ul>
+    </nav>
+  </header>
+</body>
+</html>
