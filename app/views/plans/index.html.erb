@@ -7,9 +7,10 @@
 <%= month_calendar events: @plans do |date, plans| %>
      <%= date.day %>
      <% plans.each do |plan| %>
+     <% if user_signed_in? && current_user.id == plan.user_id %>
      <ul>
          <%= link_to plan.title, plan_path(plan.id), method: :get, class: 'date-title' %> 
      </ul>
      <% end %>
+     <% end %>
    <% end %>  
-   

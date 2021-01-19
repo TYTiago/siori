@@ -3,8 +3,10 @@
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
 <ul><% @plans.each do |plan| %>
+<% if user_signed_in? && current_user.id == plan.user_id %>
   <li>
     <%= link_to plan.title, plan %>
   </li>
+  <% end %>
   <% end %>
 </ul>

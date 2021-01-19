@@ -60,10 +60,14 @@
 </div>
 </div>
 <footer>
-  <div class="plan-footer">
+    <% if user_signed_in? %>
+    <% if @plan.user == current_user %>
+      <div class="plan-footer">
           <%= link_to "編集", edit_plan_path(@plan.id), method: :get, class: 'plan-destroy' %>
           <%= link_to '削除', plan_path(@plan.id), method: :delete, class: 'plan-edit' %>
-  </div>
+      </div>
+    <% end %>
+    <% end %>
 </footer>
 </body>
 </html>

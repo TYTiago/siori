@@ -1,7 +1,7 @@
 body{
   text-align: center;
-  
-}
+} 
+
 .plan-main{
   height: 90vh; 
   background-color: rgb(232, 251, 252);
@@ -36,7 +36,6 @@ footer{
 .plan-footer{
   position: relative;
   top: 20px;
-  
 }
 
 
@@ -69,6 +68,7 @@ header {
   height: 70px;
   background-color: rgb(105, 247, 247);
   align-items: center;
+
 }
  
 .title {
@@ -107,18 +107,6 @@ header {
 /* user */
 
 
-
-.user-new {
-  height: 200px;
-  width: 300px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-top: -100px;
-  margin-left: -150px;
-  background-repeat: no-repeat;
-  text-align: center;
-  }
 
 
 
